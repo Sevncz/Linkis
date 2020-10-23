@@ -26,7 +26,6 @@ import com.webank.wedatasphere.linkis.storage.utils.StorageUtils
 import org.apache.commons.lang.StringUtils
 import org.apache.hadoop.fs.{FileSystem, Path}
 import org.apache.hadoop.io.IOUtils
-import org.apache.spark.sql.SparkSession
 import org.apache.spark.sql.types._
 import org.json4s._
 import org.json4s.jackson.JsonMethods._

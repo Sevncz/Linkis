@@ -47,6 +47,7 @@ import org.slf4j.LoggerFactory
 import scala.collection.JavaConversions._
 import scala.collection.mutable.ArrayBuffer
 
+
 /**
   * created by cooperyang on 2018/11/22
   * Description:
@@ -367,7 +368,8 @@ class HiveDriverProxy(driver: Any) extends Logging {
 object HiveDriverProxy extends Logging {
 
   private val COMMAND_NEED_RETRY_EXCEPTION_CLASS_STR = "org.apache.hadoop.hive.ql.CommandNeedRetryException"
-  private val IDRIVER_CLASS_STR = "org.apache.hadoop.hive.ql.IDriver"
+//  private val IDRIVER_CLASS_STR = "org.apache.hadoop.hive.ql.IDriver"
+  private val IDRIVER_CLASS_STR = "org.apache.hive.jdbc.HiveDriver"
 
   val COMMAND_NEED_RETRY_EXCEPTION_CLASS = Utils.tryAndWarn {
     Thread.currentThread().getContextClassLoader
