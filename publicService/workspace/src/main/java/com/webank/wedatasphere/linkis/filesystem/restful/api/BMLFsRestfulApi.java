@@ -127,6 +127,10 @@ public class BMLFsRestfulApi {
         String creator = (String)json.get("creator");
         String projectName = (String)json.get("projectName");
         ScriptFsWriter writer = StorageScriptFsWriter.getScriptFsWriter(new FsPath(fileName), Consts.UTF_8.toString(), null);
+        // 处理关联空异常
+        if(params == null) {
+            params = new HashMap<>();
+        }
         Variable[] v = VariableParser.getVariables(params);
         List<Variable> variableList = Arrays.stream(v).filter(var -> !StringUtils.isEmpty(var.value())).collect(Collectors.toList());
         writer.addMetaData(new ScriptMetaData(variableList.toArray(new Variable[0])));
